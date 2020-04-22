@@ -1,0 +1,54 @@
+html {
+    background: #b3b3b3;
+    padding: 15px;
+    border: 5px solid white;
+    margin: 15px;
+    height: 2000px;
+    overflow: auto; /* 在 body 里添加 overflow: hidden; 则得在 html 再添加一次，否则 body 里的声明实际上会被传到 html 。 */
+}
+
+body {
+    background: #fa923f;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+.parent {
+    background: white;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 0;
+
+    /* CSS属性 overflow 定义当一个元素的内容太大而无法适应 块级格式化上下文 时候该做什么。它是 overflow-x 和overflow-y的 简写属性 。 */
+    /* overflow: hidden; */
+
+    position: relative;
+    top: 200px;
+  }
+  
+.parent div {
+    background: rgb(105, 105, 109);
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+.parent .child-1 {
+  /* fixed */
+  /* depend on viewport */
+  /* block level element or inline element both can be applied. */
+  /* position: fixed;
+  width: 400px;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box; */
+
+  /* position: relative;
+  top: 170px;
+  right: 50px; */
+}

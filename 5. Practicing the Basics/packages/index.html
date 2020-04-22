@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    
     <header class="main-header">
         <div>
             <a href="../index.html" class="main-header__brand">
@@ -32,10 +33,12 @@
             </ul>
         </nav>
     </header>
+    <div class="background"></div>
     <main>
         <section class="package" id="plus">
             <a href="#">
-                <h1 class="package__title">Our PLUS Plan</h1c>
+                <h1 class="package__title">Our PLUS Plan</h1>
+                <h2 class="package__badge">RECOMMENDED</h2>
                 <h2 class="package__subtitle">The most popular choice of our customers.</h2>
                 <p class="package__info">Benefit from increased storage and faster support to ensure that your mission-critical data and applications
                     are always available!</p>
@@ -72,3 +75,7 @@
 </body>
 
 </html>
+
+<!-- z-index 相同时，header 在 div 的上边。
+    Therefore the header comes later in out code and therefore the header is displayed above our background.background.
+    因为都是 position: fixed; ，所有后边的覆盖前边的。 -->

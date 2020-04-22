@@ -1,4 +1,13 @@
 * {
+    /* CSS 中的 box-sizing 属性定义了 user agent 应该如何计算一个元素的总宽度和总高度。
+
+     box-sizing 属性可以被用来调整这些表现:
+     content-box  是默认值。如果你设置一个元素的宽为100px，那么这个元素的内容区会有100px 宽，
+                  并且任何边框和内边距的宽度都会被增加到最后绘制出来的元素宽度中。
+     border-box 告诉浏览器：你想要设置的边框和内边距的值是包含在width内的。也就是说，如果你将
+                  一个元素的width设为100px，那么这100px会包含它的border和padding，内容区的
+                  实际宽度是width减去(border + padding)的值。大多数情况下，这使得我们更容易
+                  地设定一个元素的宽高。 */
     box-sizing: border-box;
 }
 
@@ -11,6 +20,10 @@ body {
     width: 100%;
     background: #2ddf5c;
     padding: 8px 16px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
 }
 
 .main-header > div {
