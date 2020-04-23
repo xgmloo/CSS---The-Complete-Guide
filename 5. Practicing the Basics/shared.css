@@ -16,10 +16,21 @@ body {
     margin: 0;
 }
 
+.backdrop {
+    position: fixed; /* positon: absolute; 若之前没有 position: relative; , 则表现和 fixed 一样 */
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+
 .main-header {
     width: 100%;
     background: #2ddf5c;
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -36,7 +47,15 @@ body {
     color: #0e4f1f;
     text-decoration: none;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 1.3rem;
+    height: 1.3rem;
+    /* width: 20px; */
+    display: inline-block;
+}
+
+.main-header__brand img {
+    height: 100%;
+    /* width: 100%; */
 }
 
 .main-nav {
@@ -54,14 +73,14 @@ body {
 
 .main-nav__item {
     display: inline-block;
-    margin: 0 16px;
+    margin: 0 1rem;
 }
 
 .main-nav__item a {
     text-decoration: none;
     color: #0e4f1f;
     font-weight: bold;
-    padding: 3px 0;
+    padding: 0.2rem 0;
 }
 
 .main-nav__item a:hover,
@@ -73,7 +92,7 @@ body {
 .main-nav__item--cta a {
     color: white;
     background: #ff1b68;
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
     border-radius: 8px;
 }
 
@@ -86,8 +105,8 @@ body {
 
 .main-footer {
     background: black;
-    padding: 32px;
-    margin-top: 48px;
+    padding: 2rem;
+    margin-top: 3rem;
 }
 
 .main-footer__links {
@@ -99,7 +118,7 @@ body {
 
 .main-footer__link {
     display: inline-block;
-    margin: 0 16px;
+    margin: 0 1rem;
 }
 
 .main-footer__link a {
@@ -120,7 +139,7 @@ body {
     color: white;
     font: inherit;
     border: 1.5px solid #0e4f1f;
-    padding: 8px;
+    padding: 0.5rem;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
@@ -140,3 +159,9 @@ body {
         - 轮廓可以是非矩形的。在Gecko/Firefox中，轮廓是矩形的，但是Opera则会围绕元素结构绘制非矩形的形状  */
     outline: none;
 }
+
+/* %:
+   position: fixed , the containing block is the Viewport
+   position: absolute , the containing block is the Ancestor(content + padding) (the closest ancestor which is not position static)
+   position: atatic/relative , the containing block is the Ancestor(only content) (the closest ancestor whick is the block level element) */
+
