@@ -1,5 +1,5 @@
 #product-overview {
-    background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent), url("images/freedom.jpg") left 10% bottom 60%/cover no-repeat border-box fixed, #ff1b68;
+    background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent), url("images/freedom.jpg") center/cover no-repeat border-box, #ff1b68;
     /* background-image: url("freedom.jpg");
     background-size: cover;
     background-position: left 10% bottom 50%;
@@ -11,15 +11,10 @@
     /* background-image: radial-gradient(circle 200px at 20% 50%, red, blue, green); */
     width: 100%;
     /* vw计算的是整个视口的宽度，包括滚动条，百分比计算宽度的后会不包括滚动条，移动端的滚动条不占位置。 */
-    height: 70vh;
-    margin-top: 2.5rem;
+    height: 33vh;
+    margin-top: 3.5rem;
     /* border: 5px dashed red; */
-    position: relative;  
-}
-
-.section-title {
-    color: #2ddf5c;
-    text-align: center;
+    position: relative;
 }
 
 #product-overview h1 {
@@ -28,11 +23,26 @@
     position: absolute;
     bottom: 5%;
     left: 3%;
+    font-size: 1.6rem;
 }
 
-.plan__list {
-    width: 80%;
-    margin: auto;
+/* CSS 媒体属性屏幕方向（orientation）可用于测试视口 viewport（或者对于分页媒体而言的页面框盒）的横纵方向。
+   portrait  viewport 处于纵向，即高度大于等于宽度。
+   landscape  viewport 处于横向，即宽度大于高度。 */
+
+@media (min-width: 40rem) and (min-height: 40rem) {
+    #product-overview {
+        height: 40vh;
+        background-position: 50% 25%;
+    }
+
+    #product-overview h1 {
+        font-size: 1.6rem;
+    }
+}
+
+.section-title {
+    color: #2ddf5c;
     text-align: center;
 }
 
@@ -40,17 +50,37 @@
     background: #d5ffdc;
     text-align: center;
     padding: 1rem;
-    margin: 0.5rem;
-    display: inline-block;
-    width: 30%;
-    vertical-align: middle;
+    margin: 0.5rem 0;
+    display: block;
+    width: 100%;
+}
+
+@media (min-width: 44rem) {
+    .plan__list {
+        width: 100%;
+        text-align: center;
+    }
+
+    .plan {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        width: 30%;
+        min-width: 13rem;
+        max-width: 22rem;
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+
+    .plan--highlighted {
+        /* CSS box-shadow 属性用于在元素的框架上添加阴影效果，该属性可设置的值包括X轴偏移、Y轴偏移、阴影模糊半径、阴影扩散半径，和阴影颜色，并以多个逗号分隔。 */
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    }
 }
 
 .plan--highlighted {
     background: #19b84c;
     color: white;
-    /* CSS box-shadow 属性用于在元素的框架上添加阴影效果，该属性可设置的值包括X轴偏移、Y轴偏移、阴影模糊半径、阴影扩散半径，和阴影颜色，并以多个逗号分隔。 */
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .plan__annotation {
@@ -106,12 +136,6 @@
     text-align: center;
 }
 
-.key-feature {
-    display: inline-block;
-    width: 30%;
-    vertical-align: top;
-}
-
 .key-feature__image {
     background: #ffcede;
     width: 128px;
@@ -129,6 +153,15 @@
     font-size: 1.2rem;
 }
 
+@media (min-width: 44rem) {
+    .key-feature {
+        display: inline-block;
+        width: 30%;
+        max-width: 22rem;
+        vertical-align: top;
+    }
+}
+
 /* h1 {
     font-family: sans-serif;
 } */
@@ -144,18 +177,18 @@
     padding: 1rem;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal__title {
+}
+
+.modal__title {
     text-align: center;
     margin: 0 0 1rem 0;
-  }
-  
-  .modal__actions {
+}
+
+.modal__actions {
     text-align: center;
-  }
-  
-  .modal__action {
+}
+
+.modal__action {
     border: 1px solid #0e4f1f;
     background: #0e4f1f;
     text-decoration: none;
@@ -163,21 +196,21 @@
     font: inherit;
     padding: 0.5rem 1rem;
     cursor: pointer;
-  }
-  
-  .modal__action:hover,
-  .modal__action:active {
+}
+
+.modal__action:hover,
+.modal__action:active {
     background: #2ddf5c;
     border-color: #2ddf5c;
-  }
-  
-  .modal__action--negative {
+}
+
+.modal__action--negative {
     background: red;
     border-color: red;
-  }
-  
-  .modal__action--negative:hover,
-  .modal__action--negative:active {
+}
+
+.modal__action--negative:hover,
+.modal__action--negative:active {
     background: #ff5454;
     border-color: #ff5454;
-  }
+}
