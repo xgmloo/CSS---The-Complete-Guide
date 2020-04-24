@@ -1,3 +1,16 @@
+/* woff2 woff ttf */
+
+@font-face {
+    font-family: 'AnonymousPro';
+    src: url('anonymousPro-Regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'AnonymousPro';
+    src: url('anonymousPro-Bold.ttf') format("truetype");
+    font-weight: 700;
+}
+
 .background {
     background: url("../images/plans-background.jpg") center/cover;
     filter: grayscale(40%);
@@ -54,8 +67,10 @@ main {
     background: white;
     border: 1px solid #0e4f1f;
     padding: 2rem;
-    font-size: 1.2rem;
     color: #0e4f1f;
+    font-size: 1.2rem;
+    /* font: italic small-caps 700 1.2rem/2 'AnonymousPro', sans-serif; */
+    /* font-style font-variant font-weight  font-size/line-height font-family */
 }
 
 .clearfix {
