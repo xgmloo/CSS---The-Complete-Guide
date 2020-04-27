@@ -12,7 +12,6 @@
     width: 100%;
     /* vw计算的是整个视口的宽度，包括滚动条，百分比计算宽度的后会不包括滚动条，移动端的滚动条不占位置。 */
     height: 33vh;
-    margin-top: 3.5rem;
     /* border: 5px dashed red; */
     position: relative;
 }
@@ -55,26 +54,30 @@
     width: 100%;
 }
 
-@media (min-width: 44rem) {
+@media (min-width: 40rem) {
     .plan__list {
         width: 100%;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .plan {
-        display: inline-block;
-        vertical-align: middle;
-        text-align: center;
         width: 30%;
+        height: 28rem;
         min-width: 13rem;
         max-width: 22rem;
         padding: 1rem;
-        margin: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .plan--highlighted {
         /* CSS box-shadow 属性用于在元素的框架上添加阴影效果，该属性可设置的值包括X轴偏移、Y轴偏移、阴影模糊半径、阴影扩散半径，和阴影颜色，并以多个逗号分隔。 */
         box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+        height: 30rem;
+        z-index: 1;
     }
 }
 
@@ -133,7 +136,9 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .key-feature__image {
@@ -153,12 +158,15 @@
     font-size: 1.2rem;
 }
 
-@media (min-width: 44rem) {
+@media (min-width: 40rem) {
     .key-feature {
-        display: inline-block;
         width: 30%;
         max-width: 22rem;
-        vertical-align: top;
+    }
+
+    .key-feature__list {
+        flex-direction: row;
+        justify-content: center;
     }
 }
 
@@ -168,15 +176,24 @@
 
 .modal {
     position: fixed;
-    display: none;
+    opacity: 0;
+    transform: translateY(-3rem);
+    transition: opacity 0.2s ease-out, transform 500ms ease-out;
     z-index: 200;
     top: 20%;
-    left: 30%;
-    width: 40%;
+    left: 10%;
+    width: 80%;
     background: white;
     padding: 1rem;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 40rem) {
+    .modal {
+        left: 30%;
+        width: 40%;
+    }
 }
 
 .modal__title {
